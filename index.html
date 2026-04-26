@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudAlbania Package Repository</title>
+</head>
+<body>
+
+<h1>CloudAlbania Package Repository</h1>
+
+<p>
+    Welcome to the CloudAlbania package repository. This repository provides
+    APT (Debian/Ubuntu) and YUM (RHEL/CentOS/AlmaLinux) packages for internal
+    and public use.
+</p>
+
+<p>
+    Use the instructions below to configure your system and install packages.
+</p>
+
+<hr>
+
+<h2>APT (Debian / Ubuntu)</h2>
+
+<p>Add the repository:</p>
+<pre>
+echo "deb [trusted=yes] https://repo.cloudalbania.com/apt/ /" | sudo tee /etc/apt/sources.list.d/cloudalbania.list </pre>
+
+<p>Update package list:</p>
+<pre>
+sudo apt update </pre>
+
+<p>Install a package:</p>
+<pre>
+sudo apt install &lt;package-name&gt; </pre>
+
+<hr>
+
+<h2>YUM / DNF (RHEL / CentOS / AlmaLinux)</h2>
+
+<p>Create a repo file:</p>
+<pre>
+sudo tee /etc/yum.repos.d/cloudalbania.repo &lt;&lt;FILE
+[cloudalbania]
+name=CloudAlbania Repository
+baseurl=https://repo.cloudalbania.com/yum
+enabled=1
+gpgcheck=0
+FILE
+
+</pre>
+<p>Install a package:</p>
+<pre>
+sudo yum install &lt;package-name&gt; 
+</pre>
+Or with dnf:
+<pre>
+sudo dnf install &lt;package-name&gt; </pre>
+<hr>
+
+<h2>Notes</h2>
+
+<ul>
+    <li>Replace <code>&lt;package-name&gt;</code> with the actual package name.</li>
+    <li>Make sure your system has network access to <code>repo.cloudalbania.com</code>.</li>
+    <li>If you encounter issues, contact your system administrator.</li>
+</ul>
+
+</body>
+</html>
