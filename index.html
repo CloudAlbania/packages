@@ -14,6 +14,7 @@
     Welcome to the CloudAlbania package repository. This repository provides
     APT (Debian/Ubuntu) and YUM (RHEL/CentOS/AlmaLinux) packages for internal
     and public use.
+    The list of available packages to install is at https://repo.cloudalbania.com/
 </p>
 
 <p>
@@ -24,6 +25,11 @@
 
 <h2>APT (Debian / Ubuntu)</h2>
 
+<p>Add dependencies:</p>
+<pre>
+apt install -y sudo ca-certificates </pre>
+
+    
 <p>Add the repository:</p>
 <pre>
 echo "deb [trusted=yes] https://repo.cloudalbania.com/apt/ /" | sudo tee /etc/apt/sources.list.d/cloudalbania.list </pre>
@@ -40,6 +46,12 @@ sudo apt install &lt;package-name&gt; </pre>
 
 <h2>YUM / DNF (RHEL / CentOS / AlmaLinux)</h2>
 
+</pre>
+<p>Install dependencies:</p>
+<pre>
+dnf install sudo -y
+</pre>
+    
 <p>Create a repo file:</p>
 <pre>
 sudo tee /etc/yum.repos.d/cloudalbania.repo &lt;&lt;FILE
